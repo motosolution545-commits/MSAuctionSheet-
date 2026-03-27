@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Moto Solution</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body{margin:0;font-family:Arial, sans-serif;background:#f4f4f4;}
+.container{max-width:900px;margin:auto;padding:10px;}
+
+/*  STYLISH HEADER DESIGN  */
+.header{
+    background:#fff;
+    padding:20px;
+    text-align:center;
+    border-top:5px solid #d32f2f;
+    border-radius:10px;
+    margin-bottom:15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.brand-logo {
+    max-height: 80px;
+    margin-bottom: 15px;
+}
+
+.header h2 { 
+    color: #d32f2f; 
+    margin: 0 0 15px 0; 
+    font-size: 28px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+.contact-info { 
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 0 auto 20px auto;
+    max-width: 650px;
+    color: #444; 
+    line-height: 1.8; 
+    font-size: 15px;
+}
+
+.contact-info .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.contact-info i {
+    color: #d32f2f;
+    margin-right: 5px;
+    width: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-links a { 
+    text-decoration: none; 
+    padding: 10px 20px; 
+    border-radius: 30px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Social Media Button Colors */
+.link-web { background: #e3f2fd; color: #1565c0; border: 1px solid #bbdefb; }
+.link-fb { background: #e8eaf6; color: #283593; border: 1px solid #c5cae9; }
+.link-ig { background: #fce4ec; color: #c2185b; border: 1px solid #f8bbd0; }
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    filter: brightness(0.95);
+}
+
+/* AUCTION SHEET STYLES */
+.auction{
+position:relative;
+}
+
+.auction img{
+width:100%;
+display:block;
+}
+
+/*  FIXED CLICKABLE BOX ( ) */
+.box{
+position:absolute;
+cursor:pointer;
+z-index:999; 
+}
+
+/* highlight */
+.box.active{
+border:2px solid red;
+background:rgba(255,0,0,0.2);
+}
+
+.box:hover{
+background:rgba(255,0,0,0.15);
+}
+
+.info{
+background:#fff;
+padding:15px;
+margin-top:10px;
+border-left:5px solid red;
+display:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+    <img src="moto_solution_logo.png" alt="Moto Solution Logo" class="brand-logo">
+    <h2>Moto Solution</h2>
+    
+    <div class="contact-info">
+        <div class="name"><i class="fas fa-user-tie"></i> Contact Person: Rashed Khan</div><br>
+        <i class="fas fa-phone-alt"></i> 01950-057283 &nbsp;&nbsp;|&nbsp;&nbsp; 
+        <i class="fas fa-envelope"></i> motosolution545@gmail.com<br>
+        <i class="fas fa-map-marker-alt"></i> Suit: 404 (Lift-3), House-145, Road No. 3, Block A, Niketan, Gulshan, Dhaka
+    </div>
+
+    <div class="social-links">
+        <a href="https://motosolutionbd.com" target="_blank" class="link-web"><i class="fas fa-globe"></i> Website</a>
+        <a href="https://www.facebook.com/motosolutionbd" target="_blank" class="link-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.instagram.com/motosolutioncar" target="_blank" class="link-ig"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+</div>
+
+<div class="auction">
+
+<img src="IMG_20260327_211841.jpg">
+
+<div class="box" style="top:4%;left:3%;width:15%;height:8%;" onclick="show(this,'.   (Lot No)','     ')"></div>
+
+<div class="box" style="top:4%;left:18%;width:20%;height:5%;" onclick="show(this,'.  (History)','     ')"></div>
+
+<div class="box" style="top:4%;left:38%;width:16%;height:5%;" onclick="show(this,'.   (CC)','   (CC)')"></div>
+
+<div class="box" style="top:4%;left:54%;width:28%;height:5%;" onclick="show(this,'.    ','     ')"></div>
+
+<div class="box" style="top:4%;left:83%;width:13%;height:7%;" onclick="show(this,'.   (Overall)','   (Grade)')"></div>
+
+<div class="box" style="top:9%;left:18%;width:10%;height:4%;" onclick="show(this,'.  ','     ')"></div>
+
+<div class="box" style="top:9%;left:28%;width:26%;height:4%;" onclick="show(this,'.  ','   ')"></div>
+
+<div class="box" style="top:9%;left:54%;width:28%;height:4%;" onclick="show(this,'.    ','    ')"></div>
+
+<div class="box" style="top:9%;left:83%;width:6%;height:4%;" onclick="show(this,'.  ',' - ')"></div>
+
+<div class="box" style="top:9%;left:89%;width:6%;height:4%;" onclick="show(this,'.  ','   ')"></div>
+
+<div class="box" style="top:21%;left:3%;width:40%;height:4%;" onclick="show(this,'.  (Mileage)','     ')"></div>
+
+<div class="box" style="top:21%;left:43%;width:20%;height:4%;" onclick="show(this,'.  (Shift)','   ')"></div>
+
+<div class="box" style="top:18%;left:64%;width:32%;height:6%;" onclick="show(this,'. /',',    ')"></div>
+
+<div class="box" style="top:25%;left:3%;width:25%;height:4%;" onclick="show(this,'.   (Color)','   ')"></div>
+
+<div class="box" style="top:25%;left:29%;width:14%;height:4%;" onclick="show(this,'.  ','   ')"></div>
+
+<div class="box" style="top:25%;left:43%;width:20%;height:4%;" onclick="show(this,'.  (AC Condition)','    ')"></div>
+
+<div class="box" style="top:23%;left:64%;width:32%;height:13%;" onclick="show(this,'.  ','     ')"></div>
+
+<div class="box" style="top:30%;left:3%;width:25%;height:4%;" onclick="show(this,'.  (Fuel)',',    ')"></div>
+
+<div class="box" style="top:30%;left:29%;width:14%;height:4%;" onclick="show(this,'.  ','    ')"></div>
+
+<div class="box" style="top:41%;left:3%;width:48%;height:15%;" onclick="show(this,'.  ','    ')"></div>
+
+<div class="box" style="top:46%;left:51%;width:45%;height:39%;" onclick="show(this,'.   (Vehicle Map)',',      ')"></div>
+
+</div>
+
+<div class="info" id="info">
+<h3 id="t"></h3>
+<p id="d"></p>
+</div>
+
+</div>
+
+<script>
+function show(el,t,d){
+document.querySelectorAll('.box').forEach(b=>b.classList.remove('active'));
+el.classList.add('active');
+
+document.getElementById('t').innerText=t;
+document.getElementById('d').innerText=d;
+document.getElementById('info').style.display='block';
+}
+</script>
+
+</body>
+</html>
