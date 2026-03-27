@@ -8,70 +8,87 @@
 <style>
 body { margin:0; font-family: Arial, sans-serif; background:#f4f4f4; color: #333; }
 .container { max-width:900px; margin:auto; padding:10px; }
+
+/* হেডার ডিজাইন */
 .header { background:#fff; padding:20px; text-align:center; border-top:5px solid #d32f2f; border-radius:10px; margin-bottom:15px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
 .brand-logo { max-height: 80px; margin-bottom: 10px; }
 .header h2 { color: #d32f2f; margin: 5px 0; font-size: 28px; text-transform: uppercase; font-weight: 900; }
 .contact-info { background: #fdfdfd; border: 1px solid #eee; border-radius: 8px; padding: 15px; margin: 15px auto; max-width: 650px; line-height: 1.8; font-size: 15px; }
 .contact-info i { color: #d32f2f; margin-right: 5px; width: 20px; text-align: center; }
-.social-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
-.social-links a { text-decoration: none; padding: 8px 18px; border-radius: 30px; font-size: 14px; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 8px; border: 1px solid #ccc; }
-.link-web { background: #e3f2fd; color: #1565c0; }
-.link-fb { background: #e8eaf6; color: #283593; }
-.link-ig { background: #fce4ec; color: #c2185b; }
-.auction { position:relative; line-height: 0; }
+
+/* অকশন শিট এরিয়া */
+.auction { position:relative; line-height: 0; background:#fff; padding:5px; border-radius:5px; }
 .auction img { width:100%; display:block; border-radius: 5px; }
 .box { position:absolute; cursor:pointer; z-index:999; }
 .box.active { border:2.5px solid red !important; background:rgba(255,0,0,0.2) !important; }
+
+/* ইনস্পেক্টর নোটস সেকশন (নতুন) */
+.inspector-notes { background:#fff; padding:25px; margin-top:15px; border-radius:5px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.inspector-notes h2 { color: #555; font-size: 24px; margin-bottom: 15px; font-weight: normal; }
+.inspector-notes p { font-size: 16px; color: #444; line-height: 1.6; }
+
+/* তথ্য দেখানোর বক্স */
 .info { background:#fff; padding:20px; margin-top:15px; border-left:6px solid red; border-radius: 5px; display:none; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 .info h3 { margin: 0 0 10px 0; color: #d32f2f; font-size: 22px; }
 .info p { margin: 0; font-size: 17px; line-height: 1.6; }
+
+/* কালো ফুটার সেকশন (নতুন) */
+.footer { background: #1a1a1a; color: #fff; padding: 40px 20px; text-align: center; margin-top: 30px; }
+.footer p { margin: 5px 0; font-size: 14px; color: #ccc; }
+.footer .contact-detail { font-size: 16px; color: #fff; margin-bottom: 20px; }
+.footer-social { margin: 20px 0; }
+.footer-social a { color: #fff; font-size: 22px; margin: 0 15px; text-decoration: none; opacity: 0.8; }
+.footer-social a:hover { opacity: 1; color: #d32f2f; }
 </style>
 </head>
 <body>
+
 <div class="container">
     <div class="header">
         <img src="moto_solution_logo.png" alt="Logo" class="brand-logo" onerror="this.style.display='none'">
         <h2>MOTO SOLUTION</h2>
         <div class="contact-info">
             <strong><i class="fas fa-user-tie"></i> Contact Person: Rashed Khan</strong><br>
-            <i class="fas fa-phone-alt"></i> 01950-057283 &nbsp; | &nbsp; <i class="fas fa-envelope"></i> motosolution545@gmail.com<br>
-            <i class="fas fa-map-marker-alt"></i> Suit: 404 (Lift-3), House-145, Road No. 3, Block A, Niketan, Gulshan, Dhaka
-        </div>
-        <div class="social-links">
-            <a href="https://motosolutionbd.com" target="_blank" class="link-web"><i class="fas fa-globe"></i> Website</a>
-            <a href="https://www.facebook.com/motosolutionbd" target="_blank" class="link-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://www.instagram.com/motosolutioncar" target="_blank" class="link-ig"><i class="fab fa-instagram"></i> Instagram</a>
+            <i class="fas fa-phone-alt"></i> 01950-057283 &nbsp; | &nbsp; <i class="fas fa-envelope"></i> motosolution545@gmail.com
         </div>
     </div>
+
     <div class="auction">
         <img src="IMG_20260327_211841.jpg" alt="Auction Sheet">
         <div class="box" style="top:4%;left:3%;width:15%;height:8%;" onclick="show(this,'১. লট নম্বর','নিলামে গাড়ি সনাক্ত করার আইডি নম্বর।')"></div>
-        <div class="box" style="top:4%;left:18%;width:20%;height:5%;" onclick="show(this,'২. ইতিহাস','গাড়িটি আগে ব্যক্তিগত নাকি রেন্টাল ছিল।')"></div>
-        <div class="box" style="top:4%;left:38%;width:16%;height:5%;" onclick="show(this,'৩. ইঞ্জিন সিসি','গাড়ির ইঞ্জিনের ক্ষমতা (CC)।')"></div>
-        <div class="box" style="top:4%;left:54%;width:28%;height:5%;" onclick="show(this,'৪. মডেল কোড ও গ্রেড','গাড়ির বডি কোড ও চ্যাসিস টাইপ।')"></div>
         <div class="box" style="top:4%;left:83%;width:13%;height:7%;" onclick="show(this,'৫. অকশন গ্রেড','গাড়ির সামগ্রিক কন্ডিশন। ৪.৫ বা ৫ মানে ফ্রেশ।')"></div>
-        <div class="box" style="top:9%;left:18%;width:10%;height:4%;" onclick="show(this,'৬. রেজিস্ট্রেশন সাল','জাপানে গাড়ি নিবন্ধনের বছর ও মাস।')"></div>
-        <div class="box" style="top:9%;left:28%;width:26%;height:4%;" onclick="show(this,'৭. গাড়ির নাম','গাড়ির ব্র্যান্ড এবং মডেলের নাম।')"></div>
-        <div class="box" style="top:9%;left:54%;width:28%;height:4%;" onclick="show(this,'৮. দরজা ও বডি টাইপ','দরজার সংখ্যা এবং বডির ধরন।')"></div>
-        <div class="box" style="top:9%;left:83%;width:6%;height:4%;" onclick="show(this,'৯. ইন্টেরিয়র গ্রেড','ভেতরের পরিষ্কার-পরিচ্ছন্নতার গ্রেড।')"></div>
-        <div class="box" style="top:9%;left:89%;width:6%;height:4%;" onclick="show(this,'১০. এক্সটেরিয়র গ্রেড','বাইরের বডির কন্ডিশন গ্রেড।')"></div>
-        <div class="box" style="top:21%;left:3%;width:40%;height:4%;" onclick="show(this,'১১. মাইলেজ','গাড়িটি জাপানে মোট কত কিমি চলেছে।')"></div>
-        <div class="box" style="top:21%;left:43%;width:20%;height:4%;" onclick="show(this,'১২. ট্রান্সমিশন','অটোমেটিক নাকি ম্যানুয়াল গিয়ার।')"></div>
-        <div class="box" style="top:18%;left:64%;width:32%;height:6%;" onclick="show(this,'১৩. ইক্যুইপমেন্ট','সানরুফ, অ্যালয় হুইল ইত্যাদি সুবিধা।')"></div>
-        <div class="box" style="top:25%;left:3%;width:25%;height:4%;" onclick="show(this,'১৪. গাড়ির রঙ','বাইরের বডির অরিজিনাল রঙ।')"></div>
-        <div class="box" style="top:25%;left:29%;width:14%;height:4%;" onclick="show(this,'১৫. কালার কোড','রঙের নির্দিষ্ট কোড নম্বর।')"></div>
-        <div class="box" style="top:25%;left:43%;width:20%;height:4%;" onclick="show(this,'১৬. এসি','গাড়ির এয়ার কন্ডিশনিং সিস্টেমের অবস্থা।')"></div>
-        <div class="box" style="top:23%;left:64%;width:32%;height:13%;" onclick="show(this,'১৭. সেলস পয়েন্ট','নিলাম হাউজের দেওয়া গাড়ির ভালো দিক।')"></div>
-        <div class="box" style="top:30%;left:3%;width:25%;height:4%;" onclick="show(this,'১৮. ফুয়েল','পেট্রোল, হাইব্রিড নাকি ডিজেল ইঞ্জিন।')"></div>
-        <div class="box" style="top:30%;left:29%;width:14%;height:4%;" onclick="show(this,'১৯. ইন্টেরিয়র কালার','ভেতরের সিট ও ড্যাশবোর্ডের রঙ।')"></div>
-        <div class="box" style="top:41%;left:3%;width:48%;height:15%;" onclick="show(this,'২০. পরিদর্শকের মন্তব্য','ইন্সপেক্টরের বিশেষ মন্তব্য ও সতর্কতা।')"></div>
         <div class="box" style="top:46%;left:51%;width:45%;height:39%;" onclick="show(this,'২১. বডি ম্যাপ','স্ক্র্যাচ, ডেন্ট ও রিপেয়ার মার্ক করা ম্যাপ।')"></div>
-    </div>
+        </div>
+
     <div class="info" id="info">
         <h3 id="t"></h3>
         <p id="d"></p>
     </div>
+
+    <div class="inspector-notes">
+        <h2>Independent Inspector's Notes</h2>
+        <p>The most important part is this one writing only by inspector. Here could be found short information about mechanic, electric, exterior and interior condition and etc. Remember that our team always pleased to translate auction page for you especially we pay attention into this part.</p>
+    </div>
 </div>
+
+<div class="footer">
+    <div class="contact-detail">
+        Moto Solution<br>
+        E-mail: motosolution545@gmail.com<br>
+        Office: +88 01950-057283
+    </div>
+    
+    <div class="footer-social">
+        <a href="https://www.facebook.com/motosolutionbd"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <p>Suit: 404 (Lift-3), House-145, Road No. 3, Block A, Niketan, Gulshan, Dhaka</p>
+    <p>&copy; 2026 Moto Solution. All rights reserved.</p>
+</div>
+
 <script>
 function show(el,t,d){
     document.querySelectorAll('.box').forEach(b=>b.classList.remove('active'));
@@ -82,5 +99,6 @@ function show(el,t,d){
     document.getElementById('info').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 </script>
+
 </body>
 </html>
